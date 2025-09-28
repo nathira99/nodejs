@@ -23,6 +23,17 @@ const todoController = {
       res.status(500), json({ message: "todo by id fetching error" });
     }
   },
+  createNewTodo: async (req, res) => {
+    try {
+      const { jobtitle, company, notes} = req.body;
+
+      const newId =parseInt( notes.[notes.length - 1]) + 1;
+      console.log(newId);
+
+    } catch (error) {
+      res.status(500), json({ message: "todo by id fetching error" });
+    }
+  },
 };
 
 module.exports = todoController;
